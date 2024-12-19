@@ -7,6 +7,11 @@
     font-family: 'Poppins', sans-serif;
     font-family: 'Playfair Display', serif;
 }
+.bebas-neue-regular {
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
 
 body {
     scroll-behavior: smooth;
@@ -1066,6 +1071,7 @@ div.com h3 {
     border-radius: 10px;
     font-weight: bold;
     font-size: 20px;
+    color: #fff;
 }
 .Message{
     border: 1px solid red;
@@ -1078,6 +1084,7 @@ div.com h3 {
     font-weight: bold;
     border-radius: 10px;
     font-size: 20px;
+    color: #fff;
 }
 .dir p{
     font-size: 16px;

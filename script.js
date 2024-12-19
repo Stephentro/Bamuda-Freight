@@ -47,3 +47,60 @@ window.onscroll = function() {
     wrapper1.classList.remove('scrolled');
   }
 };
+
+
+// This is for the couresel
+let currentIndex = 0;
+const totalItems = document.querySelectorAll('.carousel-item').length;
+const carousel = document.querySelector('.carousel');
+
+// Function to update the carousel position
+function updateCarousel() {
+  const offset = -currentIndex * 33.33; // 33.33% per image
+  carousel.style.transform = `translateX(${offset}%)`;
+}
+
+// Function to go to the previous slide
+function prevSlide() {
+  if (currentIndex > 0) {
+    currentIndex--;
+  } else {
+    currentIndex = totalItems - 3; // Wrap around to the last set of images
+  }
+  updateCarousel();
+}
+
+// Function to go to the next slide
+function nextSlide() {
+  if (currentIndex < totalItems - 3) {
+    currentIndex++;
+  } else {
+    currentIndex = 0; // Wrap around to the first set of images
+  }
+  updateCarousel();
+}
+
+// Event listeners for the buttons
+document.querySelector('.prev').addEventListener('click', prevSlide);
+document.querySelector('.next').addEventListener('click', nextSlide);
+
+// Initialize the carousel
+updateCarousel();
+
+
+var swiper = new Swiper(".mySwiper", {
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
